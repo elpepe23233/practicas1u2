@@ -21,6 +21,7 @@ Pasos para ejecutar:
 Finalmente abrimos nuestor navegador con "http://localhost:8080"
 
 
+<img width="1197" height="547" alt="image" src="https://github.com/user-attachments/assets/cbcb0a88-db0b-449d-8334-8507de035b00" />
 
 //////////Estructura del proyecto//////////////
 
@@ -29,3 +30,5 @@ Finalmente abrimos nuestor navegador con "http://localhost:8080"
 /views → Vistas
 /config → Conexiones a base de datos
 /docker-compose.yml → Configuración de contenedores
+
+<img width="1302" height="619" alt="image" src="https://github.com/user-attachments/assets/48903d42-1c1a-466b-ac26-81c46c92efb4" />
