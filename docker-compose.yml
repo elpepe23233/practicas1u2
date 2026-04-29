@@ -1,0 +1,45 @@
+
+version: '3.9'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  php:
+    build: ./php
+    volumes:
+      - ./app:/var/www/html
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: info
+    ports:
+      - "3306:3306"
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+
+  node:
+    image: node:20
+    container_name: sistemaweb-node-1
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
